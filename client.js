@@ -21,9 +21,9 @@ const connect = () => {
   });
 
   // Dictate an initial move for the snake
-  conn.on('connect', () => {
-    conn.write('Move: up');
-  });
+  // conn.on('connect', () => {
+  //   conn.write('Move: up');
+  // });
 
   // message to client after server kicks them out for idling too long
   // conn.on('data', (data) => { 
