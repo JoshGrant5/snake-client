@@ -20,10 +20,15 @@ const connect = () => {
     conn.write('Name: JGG');
   });
 
-  // message to client after server kicks them out for idling too long
-  conn.on('data', (data) => { 
-    console.log(data); // 'you ded cuz you idled'
+  // Dictate an initial move for the snake
+  conn.on('connect', () => {
+    conn.write('Move: up');
   });
+
+  // message to client after server kicks them out for idling too long
+  // conn.on('data', (data) => { 
+  //   console.log(data); // 'you ded cuz you idled'
+  // });
 
   return conn;
 } 
